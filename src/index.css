@@ -1,94 +1,66 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+
 :root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
+  /* ~-~-~-~-~ colors ~-~-~-~-~ */
+  --color-accent: #00c0d4;
+  --color-primary: #140a82;
+  --color-red: #b82929;
+  --color-white: #fff;
+  --color-black: #000;
+  --color-grey: #aaa;
+  --color-skyblue: #e1f4f6;
+  /* ~-~-~-~-~ colors ~-~-~-~-~ */
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  /* ~-~-~-~-~ declare font family & weight ~-~-~-~-~ */
+  --ff-roboto: "Roboto", sans-serif;
+  /* ~-~-~-~-~ declare font family & weight ~-~-~-~-~ */
 
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  /* ~-~-~-~-~ declare font size ~-~-~-~-~ */
+  --f-size-XXXL: 36px;
+  --f-size-XXl: 30px;
+  --f-size-XL: 25px;
+  --f-size-L: 20px;
+  --f-size-M: 18px;
+  --f-size-S: 16px;
+  --f-size-XS: 14px;
+  /* ~-~-~-~-~ declare font size ~-~-~-~-~ */
+
+  /* ~-~-~-~-~ common transition ~-~-~-~-~ */
+  --transition-common: all 0.5s ease 0s;
+  /* ~-~-~-~-~ common transition ~-~-~-~-~ */
+
+  /* ~-~-~-~-~ border radious adjustments ~-~-~-~-~ */
+  --radius-5: 5px;
+  --radius-10: 10px;
+  --radius-20: 20px;
+  --radius-25: 25px;
+  --radius-30: 30px;
+  --radius-35: 35px;
+  --radius-40: 40px;
+  --radius-45: 45px;
+  --radius-50: 50px;
+  /* ~-~-~-~-~ border radious adjustments ~-~-~-~-~ */
+
+  /* ~-~-~-~-~ other adjustments ~-~-~-~-~ */
+  --gap-24: 24px;
+  --gap-30: 30px;
+  --gap-40: 40px;
+  --gap-50: 50px;
+  --gap-60: 60px;
+  /* ~-~-~-~-~ other adjustments ~-~-~-~-~ */
+
+  --margin-title: 0 0 15px 0;
+  --margin-paragraph: 0 0 15px 0;
 }
 
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
-}
-
+/* ~-~-~-~-~ global styling ~-~-~-~-~ */
 body {
   margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+  padding: 0;
+  font-family: var(--ff-roboto);
 }
-
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
 }
-
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
-}
-
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
-}
-
-/* Theme handler css */
-
-/* styles/themes.css */
-:root {
-  --bg: #ffffff;
-  --text: #000000;
-  --primary: #3b82f6; /* default: blue */
-}
-
-[data-theme="dark"] {
-  --bg: #1f1f1f;
-  --text: #ffffff;
-}
-
-[data-scheme="green"] {
-  --primary: #10b981;
-}
-
-[data-scheme="red"] {
-  --primary: #ef4444;
-}
-
-[data-scheme="purple"] {
-  --primary: #8b5cf6;
-}
+/* ~-~-~-~-~ global styling ~-~-~-~-~ */

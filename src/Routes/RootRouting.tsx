@@ -1,6 +1,6 @@
 import { Route, Routes } from "react-router-dom";
 import PrivateRoutes from "./PrivateRoutes";
-import { authRoutes, protectedRoutes } from "./routes";
+import { authRoutes, protectedRoutes, publicRoutes } from "./routes";
 import { ReactNode, Suspense } from "react";
 import PageNotFound from "../pages/pageNotFound";
 
@@ -18,6 +18,13 @@ const RootRouting = () => {
           )}
         </Route>
         {authRoutes?.map(
+          (route: { path: string; element: ReactNode }, index: number) => {
+            return (
+              <Route key={index} path={route.path} element={route.element} />
+            );
+          },
+        )}
+        {publicRoutes?.map(
           (route: { path: string; element: ReactNode }, index: number) => {
             return (
               <Route key={index} path={route.path} element={route.element} />

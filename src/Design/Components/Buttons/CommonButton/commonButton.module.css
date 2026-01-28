@@ -1,0 +1,36 @@
+.buttonPrimary:global(.MuiButton-root) {
+  border: none;
+  border-radius: 60px;
+  font-family: var(--ff-inter);
+  font-size: var(--f-size-S);
+  font-weight: 500;
+  text-transform: capitalize;
+  padding: 5px 45px;
+  box-shadow: none;
+  transition: var(--transition-common);
+
+  &:global(:hover) {
+    box-shadow: none;
+  }
+
+  &:global(.MuiButton-contained) {
+    background: var(--color-primary);
+    border: 1px solid var(--color-primary);
+
+    &:global(:hover) {
+      background: var(--color-white);
+      color: var(--color-primary);
+    }
+  }
+
+  &:global(.MuiButton-outlined) {
+    background: rgba(20, 1, 130, 0.1);
+    border: 1px solid rgba(20, 1, 130, 0.1);
+    color: var(--color-primary);
+
+    &:global(:hover) {
+      background: rgba(20, 1, 130, 1);
+      color: var(--color-white);
+    }
+  }
+}

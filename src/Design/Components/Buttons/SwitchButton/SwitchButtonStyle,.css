@@ -1,0 +1,23 @@
+.custom-switch.MuiSwitch-root {
+  width: 51px;
+  height: 31px;
+  border-radius: 35px;
+  padding: 0;
+
+  .MuiSwitch-switchBase {
+    padding: 2px;
+
+    .MuiSwitch-thumb {
+      width: 27px;
+      height: 27px;
+    }
+  }
+
+  .Mui-checked + .MuiSwitch-track {
+    background: #34c759;
+    opacity: 1;
+  }
+  .Mui-checked .MuiSwitch-thumb {
+    background: var(--color-white);
+  }
+}

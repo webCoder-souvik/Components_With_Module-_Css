@@ -1,0 +1,23 @@
+.customSwitch:global(.MuiSwitch-root) {
+  width: 51px;
+  height: 31px;
+  border-radius: 35px;
+  padding: 0;
+
+  :global(.MuiSwitch-switchBase) {
+    padding: 2px;
+
+    :global(.MuiSwitch-thumb) {
+      width: 27px;
+      height: 27px;
+    }
+  }
+
+  :global(.Mui-checked + .MuiSwitch-track) {
+    background: #34c759;
+    opacity: 1;
+  }
+  :global(.Mui-checked .MuiSwitch-thumb) {
+    background: var(--color-white);
+  }
+}

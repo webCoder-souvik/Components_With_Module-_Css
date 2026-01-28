@@ -1,0 +1,79 @@
+/* .lang-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.lang-button {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  padding: 5px;
+  border-radius: 40px;
+  border: 1px solid var(--color-primary);
+  background: #fff;
+  cursor: pointer;
+  font-size: var(--f-size-S);
+  color: var(--color-primary);
+}
+
+.lang-button img {
+  width: 40px;
+  height: 40px;
+}
+
+.lang-flag {
+  font-size: 18px;
+}
+
+.lang-label {
+  font-weight: 500;
+}
+
+.lang-arrow {
+  transition: transform 0.2s ease;
+  font-size: 12px;
+  line-height: 1;
+}
+
+.lang-arrow.up {
+  transform: rotate(180deg);
+}
+
+.lang-dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 195px;
+  background: #fff;
+  border: 1px solid #dfdfdf;
+  border-radius: 15px;
+  padding: 0;
+  box-shadow: 0 4px 24px 0 rgba(0, 0, 0, 0.06);
+  z-index: 20;
+  overflow: hidden;
+}
+
+.lang-option {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 20px;
+  cursor: pointer;
+  font-size: var(--f-size-S);
+  color: var(--color-black);
+  font-weight: 500;
+  transition: var(--transition-common);
+}
+
+.lang-option:not(:last-child) {
+  border-bottom: 1px solid #dfdfdf;
+}
+
+.lang-option img {
+  width: 38px;
+  height: 38px;
+}
+
+.lang-option:hover {
+  background: #e1f4f6;
+} */

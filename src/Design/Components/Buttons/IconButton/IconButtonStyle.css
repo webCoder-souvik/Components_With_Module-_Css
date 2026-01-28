@@ -1,0 +1,33 @@
+.custom-icon--button.MuiIconButton-root {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+
+  svg {
+    color: var(--color-white);
+    font-size: 20px;
+  }
+
+  &.button-cyan {
+    background: var(--color-accent);
+  }
+  &.button-blue {
+    background: var(--color-primary);
+  }
+  &.button-red {
+    background: var(--color-red);
+  }
+  &.button-grey {
+    background: var(--color-grey);
+  }
+  &.button-white {
+    background: var(--color-white);
+
+    svg {
+      color: var(--color-grey);
+    }
+  }
+  &.Mui-disabled {
+    background: var(--color-grey);
+  }
+}

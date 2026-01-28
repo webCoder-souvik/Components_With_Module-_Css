@@ -4,6 +4,7 @@ import { lazy } from "react";
 
 const Dashboard = lazy(() => import("../pages/dashboad"));
 const Login = lazy(() => import("../pages/login"));
+const Global = lazy(() => import("../pages/global"));
 
 export const protectedRoutes = [
   {
@@ -18,4 +19,9 @@ export const authRoutes = [
     element: <Login />,
   },
 ];
-export const publicRoutes = [{}];
+export const publicRoutes = [
+  {
+    path: "/global",
+    element: <Global />,
+  },
+];
