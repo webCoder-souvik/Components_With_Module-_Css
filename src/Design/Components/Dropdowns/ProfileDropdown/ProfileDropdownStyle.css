@@ -1,0 +1,68 @@
+/* 
+.profile-wrapper {
+  position: relative;
+  display: inline-flex;
+}
+
+.profile-button {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 5px;
+  background: var(--color-primary);
+  color: #fff;
+  border-radius: 40px;
+  border: none;
+  cursor: pointer;
+  font-size: var(--f-size-S);
+  font-weight: 500;
+  height: 50px;
+}
+
+.profile-icon {
+  width: 40px;
+  height: 40px;
+}
+
+.profile-arrow {
+  transition: transform 0.2s ease;
+  font-size: 12px;
+}
+
+.profile-arrow.up {
+  transform: rotate(180deg);
+}
+
+.profile-dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 195px;
+  background: #fff;
+  border: 1px solid #dfdfdf;
+  border-radius: 15px;
+  box-shadow: 0 4px 24px 0 rgba(0, 0, 0, 0.06);
+  padding: 0;
+  z-index: 20;
+}
+
+.profile-option {
+  padding: 15px 20px;
+  font-size: var(--f-size-S);
+  cursor: pointer;
+  color: var(--color-black);
+  font-weight: 500;
+  transition: var(--transition-common);
+}
+
+.profile-option:not(:last-child) {
+  border-bottom: 1px solid #dfdfdf;
+}
+
+.profile-option:last-child {
+  color: var(--color-red);
+}
+
+.profile-option:hover {
+  background: #e1f4f6;
+} */

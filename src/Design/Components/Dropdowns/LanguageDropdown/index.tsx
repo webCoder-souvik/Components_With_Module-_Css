@@ -12,7 +12,11 @@ import { FaChevronDown } from "react-icons/fa6";
 
 import styles from "./languageDropdown.module.css";
 
-const LanguageDropdown = () => {
+interface LanguageDropdownProps {
+  arialabel: string;
+}
+
+const LanguageDropdown = ({ arialabel }: LanguageDropdownProps) => {
   const languageOptions = [
     { code: "en", label: "English", flag: EnglishIcon },
     { code: "es", label: "Spanish", flag: SpanishIcon },
@@ -28,7 +32,7 @@ const LanguageDropdown = () => {
   const [selected, setSelected] = useState(languageOptions[0]);
 
   return (
-    <div className={styles.langWrapper}>
+    <div className={styles.langWrapper} aria-label={arialabel}>
       <button className={styles.langButton} onClick={() => setOpen(!open)}>
         <img
           src={selected.flag}

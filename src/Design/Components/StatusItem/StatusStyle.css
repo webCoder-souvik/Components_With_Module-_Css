@@ -1,0 +1,24 @@
+.status-capsule {
+  display: inline-flex;
+  font-size: var(--f-size-XS);
+  line-height: 1;
+  padding: 5px 10px;
+  border-radius: 50px;
+
+  &.capsule-green {
+    background: #deffe4;
+    color: #29b82d;
+  }
+  &.capsule-red {
+    background: #ffdede;
+    color: #b82929;
+  }
+  &.capsule-blue {
+    background: #e1f4f6;
+    color: #00c0d4;
+  }
+  &.capsule-grey {
+    background: #efefef;
+    color: #777;
+  }
+}

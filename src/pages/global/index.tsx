@@ -4,6 +4,9 @@ import { FaArrowRight } from "react-icons/fa6";
 import CustomIconButton from "../../Design/Components/Buttons/IconButton";
 import SwitchButton from "../../Design/Components/Buttons/SwitchButton";
 import LanguageDropdown from "../../Design/Components/Dropdowns/LanguageDropdown";
+import ProfileDropdown from "../../Design/Components/Dropdowns/ProfileDropdown";
+import StatusItem from "../../Design/Components/StatusItem";
+import CustomtextField from "../../Design/Components/FormElements/CustomTextField";
 
 const Global = () => {
   return (
@@ -81,9 +84,43 @@ const Global = () => {
         {/* ~~~~~~~~~~ dropdown components ~~~~~~~~~~ */}
         <div>
           <h2>Language and Profile Dropdowns</h2>
-          <LanguageDropdown />
+          <LanguageDropdown arialabel="languages" />
+          <ProfileDropdown arialable="profile" />
         </div>
         {/* ~~~~~~~~~~ dropdown components ~~~~~~~~~~ */}
+
+        {/* ~~~~~~~~~~ different status components ~~~~~~~~~~ */}
+        <div>
+          <h2>Different Status Items</h2>
+          <StatusItem
+            label="Success"
+            arialabel="success"
+            statusVariation="success"
+          />
+          <StatusItem
+            label="Progress"
+            arialabel="progress"
+            statusVariation="progress"
+          />
+          <StatusItem
+            label="Faliure"
+            arialabel="faliure"
+            statusVariation="faliure"
+          />
+          <StatusItem
+            label="Disable"
+            arialabel="disable"
+            statusVariation="disable"
+          />
+        </div>
+        {/* ~~~~~~~~~~ different status components ~~~~~~~~~~ */}
+
+        {/* ~~~~~~~~~~ different form components ~~~~~~~~~~ */}
+        <div>
+          <h2>Different Form Components</h2>
+          <CustomtextField />
+        </div>
+        {/* ~~~~~~~~~~ different form components ~~~~~~~~~~ */}
       </div>
     </>
   );

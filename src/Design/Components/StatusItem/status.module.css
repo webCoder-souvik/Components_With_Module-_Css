@@ -1,0 +1,27 @@
+.status_capsule {
+  display: inline-flex;
+  font-size: var(--f-size-XS);
+  line-height: 1;
+  padding: 5px 10px;
+  border-radius: 50px;
+
+  &.success {
+    background: #deffe4;
+    color: #29b82d;
+  }
+
+  &.faliure {
+    background: #ffdede;
+    color: #b82929;
+  }
+
+  &.progress {
+    background: #e1f4f6;
+    color: #00c0d4;
+  }
+
+  &.disable {
+    background: #efefef;
+    color: #777;
+  }
+}
