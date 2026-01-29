@@ -5,12 +5,54 @@
   margin-bottom: 5px;
 }
 
-.inputField .customInput {
+.inputField .baseInput {
   width: 100%;
 }
 
-.inputField .customInput :global .MuiOutlinedInput-notchedOutline {
-  height: 25px;
+.inputField .baseInput :global(input.MuiInputBase-input) {
+  box-sizing: border-box;
+  height: 48px;
+}
+
+.inputField .baseInput :global(.Mui-focused .MuiOutlinedInput-notchedOutline) {
+  border-width: 1px;
+}
+
+/* variant outline styling */
+.inputField .outlined :global(.MuiOutlinedInput-notchedOutline) {
   border-color: black;
   border-radius: 5px;
 }
+
+.inputField .filled :global(input) {
+  background: #f2f2f2;
+}
+
+.inputField .standard :global(.MuiOutlinedInput-notchedOutline) {
+  /* background: #f2f2f2; */
+  border-width: 0 0 1px 0;
+  border-color: black;
+  border-radius: 0;
+}
+
+/* .inputField .customInput :global .MuiOutlinedInput-notchedOutline {
+  height: 100%;
+  border-color: black;
+  border-radius: 5px;
+} */
+
+/* .baseInput {
+  width: 100%;
+}
+
+.outlined {
+  border: 1px solid;
+}
+
+.filled {
+  border: 1px solid;
+}
+
+.standard {
+  border: 1px solid;
+} */

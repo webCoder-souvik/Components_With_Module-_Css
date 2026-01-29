@@ -119,46 +119,80 @@ const Global = () => {
 
         {/* ~~~~~~~~~~ different form components ~~~~~~~~~~ */}
         <div>
+          <h2>Text Field Variants</h2>
+          <Grid container spacing={2} wrap="wrap">
+            <Grid size={6}>
+              <CustomtextField
+                arialabel="name"
+                id="name"
+                label="Outlined"
+                type="text"
+                placeholder="Name"
+                variant="outlined"
+              />
+            </Grid>
+            <Grid size={6}>
+              <CustomtextField
+                arialabel="name"
+                id="name"
+                label="Filled"
+                type="text"
+                placeholder="Name"
+                variant="filled"
+              />
+            </Grid>
+            <Grid size={6}>
+              <CustomtextField
+                arialabel="name"
+                id="name"
+                label="Standard"
+                type="text"
+                placeholder="Name"
+                variant="standard"
+              />
+            </Grid>
+          </Grid>
+
           <h2>Different Form Components</h2>
           <Grid container spacing={2}>
             <Grid size={6}>
               <CustomtextField
                 arialabel="name"
                 id="name"
-                variant="outlined"
                 label="Name"
                 type="text"
                 placeholder="Name"
+                variant="filled"
               />
             </Grid>
             <Grid size={6}>
               <CustomtextField
                 arialabel="email"
                 id="email"
-                variant="filled"
                 label="Email"
                 type="email"
                 placeholder="Email"
+                variant="filled"
               />
             </Grid>
             <Grid size={6}>
               <CustomtextField
-                arialabel="name"
-                id="name"
-                variant="standard"
-                label="Name"
+                arialabel="password"
+                id="password"
+                label="Password"
                 type="password"
-                placeholder="Name"
+                placeholder="Password"
+                variant="filled"
               />
             </Grid>
             <Grid size={6}>
               <CustomtextField
-                arialabel="email"
-                id="email"
-                variant="outlined"
-                label="Email"
+                arialabel="date"
+                id="date"
+                label="Date"
                 type="date"
-                placeholder="Email"
+                placeholder="Date"
+                variant="filled"
               />
             </Grid>
           </Grid>
