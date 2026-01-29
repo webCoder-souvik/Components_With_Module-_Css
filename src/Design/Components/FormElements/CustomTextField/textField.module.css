@@ -1,0 +1,16 @@
+.inputField .customLabel {
+  display: block;
+  font-size: 16px;
+  font-weight: 500;
+  margin-bottom: 5px;
+}
+
+.inputField .customInput {
+  width: 100%;
+}
+
+.inputField .customInput :global .MuiOutlinedInput-notchedOutline {
+  height: 25px;
+  border-color: black;
+  border-radius: 5px;
+}

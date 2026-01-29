@@ -8,6 +8,8 @@ import ProfileDropdown from "../../Design/Components/Dropdowns/ProfileDropdown";
 import StatusItem from "../../Design/Components/StatusItem";
 import CustomtextField from "../../Design/Components/FormElements/CustomTextField";
 
+import Grid from "@mui/material/Grid";
+
 const Global = () => {
   return (
     <>
@@ -118,7 +120,49 @@ const Global = () => {
         {/* ~~~~~~~~~~ different form components ~~~~~~~~~~ */}
         <div>
           <h2>Different Form Components</h2>
-          <CustomtextField />
+          <Grid container spacing={2}>
+            <Grid size={6}>
+              <CustomtextField
+                arialabel="name"
+                id="name"
+                variant="outlined"
+                label="Name"
+                type="text"
+                placeholder="Name"
+              />
+            </Grid>
+            <Grid size={6}>
+              <CustomtextField
+                arialabel="email"
+                id="email"
+                variant="filled"
+                label="Email"
+                type="email"
+                placeholder="Email"
+              />
+            </Grid>
+            <Grid size={6}>
+              <CustomtextField
+                arialabel="name"
+                id="name"
+                variant="standard"
+                label="Name"
+                type="password"
+                placeholder="Name"
+              />
+            </Grid>
+            <Grid size={6}>
+              <CustomtextField
+                arialabel="email"
+                id="email"
+                variant="outlined"
+                label="Email"
+                type="date"
+                placeholder="Email"
+              />
+            </Grid>
+          </Grid>
+          {/* <CustomtextField/> */}
         </div>
         {/* ~~~~~~~~~~ different form components ~~~~~~~~~~ */}
       </div>
