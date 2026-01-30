@@ -11,7 +11,7 @@
 
 .inputField .baseInput :global(input.MuiInputBase-input) {
   box-sizing: border-box;
-  height: 48px;
+  height: 48px; /* define field height */
 }
 
 .inputField .baseInput :global(.Mui-focused .MuiOutlinedInput-notchedOutline) {
@@ -34,25 +34,3 @@
   border-color: black;
   border-radius: 0;
 }
-
-/* .inputField .customInput :global .MuiOutlinedInput-notchedOutline {
-  height: 100%;
-  border-color: black;
-  border-radius: 5px;
-} */
-
-/* .baseInput {
-  width: 100%;
-}
-
-.outlined {
-  border: 1px solid;
-}
-
-.filled {
-  border: 1px solid;
-}
-
-.standard {
-  border: 1px solid;
-} */

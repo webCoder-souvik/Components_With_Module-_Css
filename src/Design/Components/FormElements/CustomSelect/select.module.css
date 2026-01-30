@@ -1,0 +1,42 @@
+.customSelectBox .customLabel {
+  display: block;
+  font-size: 16px;
+  font-weight: 500;
+  margin-bottom: 5px;
+}
+
+.customSelect {
+  width: 100%;
+  height: 48px;
+
+  :global(.MuiOutlinedInput-notchedOutline) {
+    border-color: black;
+    border-radius: 5px;
+  }
+
+  :global(svg.MuiSvgIcon-root) {
+    display: none;
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 10px;
+    bottom: 0;
+    background: url("/assets/images/select-dropdown.svg") top left no-repeat;
+    background-size: 100%;
+    width: 12px;
+    height: 8px;
+    margin: auto 0;
+    pointer-events: none;
+  }
+
+  &:has([aria-expanded="true"])::before {
+    transform: rotate(180deg);
+  }
+
+  &:global(.Mui-focused .MuiOutlinedInput-notchedOutline) {
+    border-width: 1px !important;
+  }
+}

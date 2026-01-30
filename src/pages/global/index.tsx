@@ -9,8 +9,35 @@ import StatusItem from "../../Design/Components/StatusItem";
 import CustomtextField from "../../Design/Components/FormElements/CustomTextField";
 
 import Grid from "@mui/material/Grid";
+import CustomSelect from "../../Design/Components/FormElements/CustomSelect";
+import { useState } from "react";
+import { SelectChangeEvent } from "@mui/material/Select";
 
 const Global = () => {
+  // options for signle select
+  const [age, setAge] = useState("");
+  const [fruit, setFruit] = useState("");
+
+  const handleAgeChange = (event: SelectChangeEvent) => {
+    setAge(event.target.value);
+  };
+  const handleFruitChange = (event: SelectChangeEvent) => {
+    setFruit(event.target.value);
+  };
+
+  const ageOptions = [
+    { value: 10, label: "Ten" },
+    { value: 20, label: "Twenty" },
+    { value: 30, label: "Thirty" },
+  ];
+
+  const fruitOptions = [
+    { value: "apple", label: "Apple" },
+    { value: "banana", label: "Banana" },
+    { value: "cherry", label: "Cherry" },
+  ];
+  // options for signle select
+
   return (
     <>
       <div className="container">
@@ -196,7 +223,40 @@ const Global = () => {
               />
             </Grid>
           </Grid>
-          {/* <CustomtextField/> */}
+
+          <h2>Select Components</h2>
+          <Grid container spacing={2}>
+            <Grid size={6}>
+              <CustomSelect
+                label="Select Your Age"
+                value={age}
+                id="student_age"
+                options={ageOptions}
+                placeholder="Please select one item"
+                onChange={handleAgeChange}
+              />
+            </Grid>
+            <Grid size={6}>
+              <CustomSelect
+                label="Select Your Fruit"
+                value={fruit}
+                id="fruit_name"
+                options={fruitOptions}
+                placeholder="Select one item below"
+                onChange={handleFruitChange}
+              />
+            </Grid>
+            <Grid size={6}></Grid>
+          </Grid>
+          <p>&nbsp;</p>
+          <p>&nbsp;</p>
+          <p>&nbsp;</p>
+          <p>&nbsp;</p>
+          <p>&nbsp;</p>
+          <p>&nbsp;</p>
+          <p>&nbsp;</p>
+          <p>&nbsp;</p>
+          <p>&nbsp;</p>
         </div>
         {/* ~~~~~~~~~~ different form components ~~~~~~~~~~ */}
       </div>
