@@ -12,17 +12,14 @@ import Grid from "@mui/material/Grid";
 import CustomSelect from "../../Design/Components/FormElements/CustomSelect";
 import { useState } from "react";
 import { SelectChangeEvent } from "@mui/material/Select";
+import MultipleSelect from "../../Design/Components/FormElements/CustomMultipleSelect";
 
 const Global = () => {
   // options for signle select
   const [age, setAge] = useState("");
-  const [fruit, setFruit] = useState("");
 
   const handleAgeChange = (event: SelectChangeEvent) => {
     setAge(event.target.value);
-  };
-  const handleFruitChange = (event: SelectChangeEvent) => {
-    setFruit(event.target.value);
   };
 
   const ageOptions = [
@@ -31,12 +28,70 @@ const Global = () => {
     { value: 30, label: "Thirty" },
   ];
 
+  const [fruit, setFruit] = useState("");
+
+  const handleFruitChange = (event: SelectChangeEvent) => {
+    setFruit(event.target.value);
+  };
+
   const fruitOptions = [
     { value: "apple", label: "Apple" },
     { value: "banana", label: "Banana" },
     { value: "cherry", label: "Cherry" },
   ];
   // options for signle select
+
+  // options for multiple select
+  // 1. Multiple select state MUST be an array
+  // const [selectedSkills, setSelectedSkills] = useState<string[]>([]);
+
+  // const handleChange = (event: SelectChangeEvent<string[]>) => {
+  //     const { value } = event.target;
+  //     // On autofill we get a stringified value.
+  //     setSelectedSkills(typeof value === 'string' ? value.split(',') : value);
+  // };
+
+  // const skillOptions = [
+  //     { value: 'react', label: 'React' },
+  //     { value: 'nextjs', label: 'Next.js' },
+  //     { value: 'typescript', label: 'TypeScript' },
+  //     { value: 'mui', label: 'Material UI' },
+  // ];
+
+  // const [course, setCourse] = useState<string[]>([]);
+
+  // const handleCourseChange = (event: SelectChangeEvent<string[]>) => {
+  //   const { value } = event.target;
+  //   setCourse(typeof value === 'string' ? value.split(',') : value);
+  // };
+
+  // const courseOptions = [
+  //   { value: "photoshop", label: "Photoshop" },
+  //   { value: "illustrator", label: "Illustrator" },
+  //   { value: "figma", label: "Figma" },
+  // ];
+  // options for multiple select
+
+  // 1. Always initialize as an array for multi-select
+  const [selectedCourses, setSelectedCourses] = useState<(string | number)[]>(
+    [],
+  );
+
+  const courseOptions = [
+    { value: "react", label: "React" },
+    { value: "vue", label: "Vue" },
+    { value: "angular", label: "Angular" },
+  ];
+
+  const handleCourseChange = (event: SelectChangeEvent<any>) => {
+    const {
+      target: { value },
+    } = event;
+
+    // 2. MUI multi-select can return a string on certain interactions (like autofill)
+    // so we ensure it's always handled as an array.
+    setSelectedCourses(typeof value === "string" ? value.split(",") : value);
+  };
 
   return (
     <>
@@ -224,7 +279,7 @@ const Global = () => {
             </Grid>
           </Grid>
 
-          <h2>Select Components</h2>
+          <h2>Basic Select Components</h2>
           <Grid container spacing={2}>
             <Grid size={6}>
               <CustomSelect
@@ -242,12 +297,28 @@ const Global = () => {
                 value={fruit}
                 id="fruit_name"
                 options={fruitOptions}
-                placeholder="Select one item below"
+                // placeholder="Select one item below"
+
                 onChange={handleFruitChange}
               />
             </Grid>
             <Grid size={6}></Grid>
           </Grid>
+
+          <h2>Multiple Select Components</h2>
+          <Grid container spacing={2}>
+            <Grid size={6}>
+              <MultipleSelect
+                label="Select Your Course"
+                value={selectedCourses}
+                id="course_name"
+                options={courseOptions}
+                onChange={handleCourseChange}
+                placeholder="Select options below"
+              />
+            </Grid>
+          </Grid>
+
           <p>&nbsp;</p>
           <p>&nbsp;</p>
           <p>&nbsp;</p>

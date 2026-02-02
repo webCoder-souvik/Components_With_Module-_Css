@@ -11,7 +11,7 @@ interface SelectOption {
   label: string;
 }
 
-// 2. Define the Props for your CustomSelect
+// 2. Define the Props for CustomSelect
 interface CustomSelectProps {
   label: string;
   value: string | number;
