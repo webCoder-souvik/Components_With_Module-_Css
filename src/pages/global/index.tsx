@@ -309,12 +309,46 @@ const Global = () => {
           <Grid container spacing={2}>
             <Grid size={6}>
               <MultipleSelect
-                label="Select Your Course"
+                label="Classis List"
                 value={selectedCourses}
                 id="course_name"
                 options={courseOptions}
                 onChange={handleCourseChange}
                 placeholder="Select options below"
+              />
+            </Grid>
+            <Grid size={6}>
+              <MultipleSelect
+                label="List with checkbox"
+                value={selectedCourses}
+                id="course_name"
+                options={courseOptions}
+                onChange={handleCourseChange}
+                placeholder="Select options below"
+                showCheckbox
+              />
+            </Grid>
+            <Grid size={6}>
+              <MultipleSelect
+                label="List with chips"
+                value={selectedCourses}
+                id="course_name"
+                options={courseOptions}
+                onChange={handleCourseChange}
+                placeholder="Select options below"
+                useChips
+              />
+            </Grid>
+            <Grid size={6}>
+              <MultipleSelect
+                label="Both chips and check"
+                value={selectedCourses}
+                id="course_name"
+                options={courseOptions}
+                onChange={handleCourseChange}
+                placeholder="Select options below"
+                useChips
+                showCheckbox
               />
             </Grid>
           </Grid>
