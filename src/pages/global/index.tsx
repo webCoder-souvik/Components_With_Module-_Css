@@ -13,6 +13,8 @@ import CustomSelect from "../../Design/Components/FormElements/CustomSelect";
 import { useState } from "react";
 import { SelectChangeEvent } from "@mui/material/Select";
 import MultipleSelect from "../../Design/Components/FormElements/CustomMultipleSelect";
+import CustomCheckOption from "../../Design/Components/FormElements/CustomCheckOption";
+import RadioGroup from "@mui/material/RadioGroup";
 
 const Global = () => {
   // options for signle select
@@ -42,36 +44,6 @@ const Global = () => {
   // options for signle select
 
   // options for multiple select
-  // 1. Multiple select state MUST be an array
-  // const [selectedSkills, setSelectedSkills] = useState<string[]>([]);
-
-  // const handleChange = (event: SelectChangeEvent<string[]>) => {
-  //     const { value } = event.target;
-  //     // On autofill we get a stringified value.
-  //     setSelectedSkills(typeof value === 'string' ? value.split(',') : value);
-  // };
-
-  // const skillOptions = [
-  //     { value: 'react', label: 'React' },
-  //     { value: 'nextjs', label: 'Next.js' },
-  //     { value: 'typescript', label: 'TypeScript' },
-  //     { value: 'mui', label: 'Material UI' },
-  // ];
-
-  // const [course, setCourse] = useState<string[]>([]);
-
-  // const handleCourseChange = (event: SelectChangeEvent<string[]>) => {
-  //   const { value } = event.target;
-  //   setCourse(typeof value === 'string' ? value.split(',') : value);
-  // };
-
-  // const courseOptions = [
-  //   { value: "photoshop", label: "Photoshop" },
-  //   { value: "illustrator", label: "Illustrator" },
-  //   { value: "figma", label: "Figma" },
-  // ];
-  // options for multiple select
-
   // 1. Always initialize as an array for multi-select
   const [selectedCourses, setSelectedCourses] = useState<(string | number)[]>(
     [],
@@ -92,6 +64,23 @@ const Global = () => {
     // so we ensure it's always handled as an array.
     setSelectedCourses(typeof value === "string" ? value.split(",") : value);
   };
+  // options for multiple select
+
+  // options for checkbox
+  const [isAgreed, setIsAgreed] = useState(false);
+
+  const handleCheckChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setIsAgreed(e.target.checked);
+  };
+  // options for checkbox
+
+  // options for radiobox
+  const [plan, setPlan] = useState("basic");
+
+  const handleRadioChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setPlan(e.target.value);
+  };
+  // options for radiobox
 
   return (
     <>
@@ -350,6 +339,49 @@ const Global = () => {
                 useChips
                 showCheckbox
               />
+            </Grid>
+          </Grid>
+
+          <h2>Checkbox and Radio Buttons</h2>
+          <Grid container spacing={2}>
+            <Grid size={3}>
+              <CustomCheckOption
+                type="checkbox"
+                label="Accept this"
+                onChange={handleCheckChange}
+                name="terms"
+              />
+            </Grid>
+            <Grid size={3}>
+              <CustomCheckOption
+                type="checkbox"
+                checked={true}
+                label="Accept this"
+                onChange={handleCheckChange}
+                name="terms"
+              />
+            </Grid>
+            <Grid size={3}>
+              <RadioGroup value={plan} onChange={handleRadioChange}>
+                <CustomCheckOption
+                  type="radio"
+                  label="Basic Plan ($0)"
+                  value="basic"
+                  onChange={handleRadioChange}
+                />
+                <CustomCheckOption
+                  type="radio"
+                  label="Pro Plan ($10)"
+                  value="pro"
+                  onChange={handleRadioChange}
+                />
+                <CustomCheckOption
+                  type="radio"
+                  label="Enterprise ($50)"
+                  value="enterprise"
+                  onChange={handleRadioChange}
+                />
+              </RadioGroup>
             </Grid>
           </Grid>
 
