@@ -10,11 +10,12 @@ import CustomtextField from "../../Design/Components/FormElements/CustomTextFiel
 
 import Grid from "@mui/material/Grid";
 import CustomSelect from "../../Design/Components/FormElements/CustomSelect";
-import { useState } from "react";
+import React, { useState } from "react";
 import { SelectChangeEvent } from "@mui/material/Select";
 import MultipleSelect from "../../Design/Components/FormElements/CustomMultipleSelect";
 import CustomCheckOption from "../../Design/Components/FormElements/CustomCheckOption";
 import RadioGroup from "@mui/material/RadioGroup";
+import CustomDialog from "../../Design/Components/CustomDialog";
 
 const Global = () => {
   // options for signle select
@@ -81,6 +82,11 @@ const Global = () => {
     setPlan(e.target.value);
   };
   // options for radiobox
+
+  // for modals
+  const [isFirstOpen, setIsFirstOpen] = React.useState(false);
+  const [isSecondOpen, setIsSecondOpen] = React.useState(false);
+  // for modals
 
   return (
     <>
@@ -385,6 +391,23 @@ const Global = () => {
             </Grid>
           </Grid>
 
+          <h2>Custom Dialog (Modal)</h2>
+          <Grid container spacing={2}>
+            <CommonButton
+              arialabel="button"
+              label="Modal Button one"
+              variant="contained"
+              onClick={() => setIsFirstOpen(true)}
+            />
+
+            <CommonButton
+              arialabel="button"
+              label="Modal Button two"
+              variant="contained"
+              onClick={() => setIsSecondOpen(true)}
+            />
+          </Grid>
+
           <p>&nbsp;</p>
           <p>&nbsp;</p>
           <p>&nbsp;</p>
@@ -397,6 +420,36 @@ const Global = () => {
         </div>
         {/* ~~~~~~~~~~ different form components ~~~~~~~~~~ */}
       </div>
+
+      {/* modal one */}
+      <CustomDialog
+        title="This is the First Modal"
+        maxWidth="md"
+        open={isFirstOpen}
+        onClose={() => setIsFirstOpen(false)}
+      >
+        <p>
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptate
+          perferendis aut voluptatibus consequatur eum optio in, molestiae
+          mollitia architecto exercitationem?
+        </p>
+      </CustomDialog>
+      {/* modal one */}
+
+      {/* modal two */}
+      <CustomDialog
+        title="This is the Second Modal"
+        maxWidth="md"
+        open={isSecondOpen}
+        onClose={() => setIsSecondOpen(false)}
+      >
+        <p>
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptate
+          perferendis aut voluptatibus consequatur eum optio in, molestiae
+          mollitia architecto exercitationem?
+        </p>
+      </CustomDialog>
+      {/* modal two */}
     </>
   );
 };
