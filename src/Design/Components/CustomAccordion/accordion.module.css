@@ -1,0 +1,35 @@
+.customAccordion:global(.MuiAccordion-root) {
+  box-shadow: none;
+  /* border: 1px solid #000; */
+  margin-top: 0;
+
+  &:global(.Mui-expanded) {
+    margin: 0;
+  }
+
+  &:not(:last-child) {
+    margin-bottom: 10px;
+  }
+
+  &:before {
+    display: none;
+  }
+}
+
+.customAccordion :global(.MuiButtonBase-root.Mui-expanded) {
+  min-height: auto;
+}
+
+.customAccordion :global(.MuiAccordion-heading) {
+  display: block;
+  border: 1px solid #000;
+}
+
+.customAccordion :global(.MuiAccordion-heading .MuiAccordionSummary-content) {
+  margin: 15px 0;
+}
+
+.customAccordion
+  :global(.MuiAccordion-heading .MuiAccordionSummary-content.Mui-expanded) {
+  margin: 15px 0;
+}
