@@ -1,0 +1,9 @@
+.customTab {
+  .tabList :global(.MuiTabs-root) {
+    min-height: auto;
+  }
+  .tabList :global(.MuiButtonBase-root) {
+    /* background: red; */
+    padding: 0;
+  }
+}
