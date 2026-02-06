@@ -2,8 +2,21 @@
   .tabList :global(.MuiTabs-root) {
     min-height: auto;
   }
-  .tabList :global(.MuiButtonBase-root) {
+
+  .tabList :global(.MuiTab-root) {
     /* background: red; */
     padding: 0;
+    min-height: 30px;
+    background: rgb(212, 212, 212);
+    border-radius: 25px;
+    padding-inline: 10px;
+  }
+
+  :global(.MuiTabs-scroller) {
+    padding-bottom: 8px;
+
+    :global(.MuiTabs-list) {
+      gap: 10px;
+    }
   }
 }

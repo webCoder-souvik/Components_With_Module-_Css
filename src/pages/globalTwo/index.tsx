@@ -1,8 +1,14 @@
-import Container from "@mui/material/Container";
-import CustomAccordion from "../../Design/Components/CustomAccordion";
 import React from "react";
+import Container from "@mui/material/Container";
 import Box from "@mui/material/Box";
+import CustomAccordion from "../../Design/Components/CustomAccordion";
 import CustomTab from "../../Design/Components/CustomTab";
+import CustomAvatar from "../../Design/Components/CustomAvatar";
+
+import avatar_image from "/assets/images/avatar-image-one.jpg";
+import Grid from "@mui/material/Grid";
+import CustomDropdwon from "../../Design/Components/Dropdowns/CustomDropdown";
+// import CustomTable from "../../Design/Components/CustomTable";
 
 const GlobalTwo = () => {
   // for accordion
@@ -100,6 +106,28 @@ const GlobalTwo = () => {
             allowMobileButton={true}
             arialabel="all page related tabs"
           />
+        </Box>
+        <Box component="section" sx={{ mb: 4 }}>
+          <h2>Custom Avatar</h2>
+          <Grid container spacing={2}>
+            <CustomAvatar
+              variant="circular"
+              src={avatar_image}
+              size={60}
+              alt="avatar"
+            />
+
+            <CustomAvatar variant="circular" size={60}>
+              S
+            </CustomAvatar>
+
+            <CustomDropdwon />
+          </Grid>
+        </Box>
+
+        <Box component="section" sx={{ mb: 4 }}>
+          <h2>Custom Table Component</h2>
+          {/* <CustomTable/> */}
         </Box>
       </Container>
     </>
