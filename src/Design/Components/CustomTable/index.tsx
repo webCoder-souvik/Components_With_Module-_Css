@@ -11,7 +11,7 @@ export interface Column {
   label: string;
   align?: "left" | "right" | "center";
   minWidth?: number;
-  format?: (value: any) => React.ReactNode; // For custom rendering (e.g., chips, buttons)
+  format?: (value: any, row: any) => React.ReactNode; // For custom rendering (e.g., chips, buttons)
 }
 
 interface CustomTableProps {
@@ -44,7 +44,7 @@ const CustomTable = ({
           </TableRow>
         </TableHead>
         <TableBody>
-          {rows.map((row, index) => {
+          {/* {rows.map((row, index) => {
             return (
               <TableRow
                 hover
@@ -62,7 +62,20 @@ const CustomTable = ({
                 })}
               </TableRow>
             );
-          })}
+          })} */}
+          {rows.map((row, rowIndex) => (
+            <TableRow key={row.id || rowIndex}>
+              {columns.map((column) => {
+                const value = row[column.id];
+                return (
+                  <TableCell key={column.id} align={column.align}>
+                    {/* We pass both value AND the full row object here */}
+                    {column.format ? column.format(value, row) : value}
+                  </TableCell>
+                );
+              })}
+            </TableRow>
+          ))}
         </TableBody>
       </Table>
     </TableContainer>

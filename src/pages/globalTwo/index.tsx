@@ -8,10 +8,13 @@ import CustomAvatar from "../../Design/Components/CustomAvatar";
 import avatar_image from "/assets/images/avatar-image-one.jpg";
 import Grid from "@mui/material/Grid";
 import CustomDropdwon from "../../Design/Components/Dropdowns/CustomDropdown";
-// import CustomTable from "../../Design/Components/CustomTable";
+import CustomTable, { Column } from "../../Design/Components/CustomTable";
+import CommonButton from "../../Design/Components/Buttons/CommonButton";
+import StatusItem from "../../Design/Components/StatusItem";
+import Stack from "@mui/material/Stack";
 
 const GlobalTwo = () => {
-  // for accordion
+  // for accordion ~~~~~~~~~~~~~~~~~~~~
   // We store the ID of the open panel. 'false' means all are closed.
   const [expanded, setExpanded] = React.useState<string | false>("panel1");
 
@@ -19,9 +22,9 @@ const GlobalTwo = () => {
     (panel: string) => (event: React.SyntheticEvent, isExpanded: boolean) => {
       setExpanded(isExpanded ? panel : false);
     };
-  // for accordion
+  // for accordion ~~~~~~~~~~~~~~~~~~~~
 
-  // for tab
+  // for tab ~~~~~~~~~~~~~~~~~~~~
   const tabData = [
     { label: "Code", value: "1", content: <p>User Profile Settings</p> },
     { label: "Issues", value: "2", content: <p>Password and 2FA</p> },
@@ -54,7 +57,87 @@ const GlobalTwo = () => {
     { label: "Private", value: "9", content: <p>Invoices and Credit Cards</p> },
     { label: "Watch", value: "10", content: <p>Invoices and Credit Cards</p> },
   ];
-  // for tab
+  // for tab ~~~~~~~~~~~~~~~~~~~~
+
+  // for table data ~~~~~~~~~~~~~~~~~~~~
+  const COLUMNS: Column[] = [
+    { id: "name", label: "Dessert", minWidth: 170 },
+    { id: "calories", label: "Calories", align: "center", minWidth: 100 },
+    { id: "fat", label: "Fat", align: "center", minWidth: 100 },
+    { id: "carbs", label: "Carbs", align: "center", minWidth: 100 },
+    { id: "protein", label: "Protein", align: "center", minWidth: 100 },
+    {
+      id: "actions",
+      label: "Actions",
+      align: "center",
+      // Added 'row' here so you can actually use the data
+      format: (_, row) => (
+        <CommonButton
+          label="View More"
+          onClick={() => console.log("Clicked row:", row.id)}
+          arialabel="action-button"
+          variant="contained"
+        />
+      ),
+    },
+    {
+      id: "options",
+      label: "Options",
+      align: "center",
+      format: (_, row) => (
+        <Stack direction={"row"} spacing={2}>
+          <StatusItem arialabel="" label="Open" statusVariation="progress" />
+          <StatusItem arialabel="" label="Success" statusVariation="success" />
+          <StatusItem arialabel="" label="Fail" statusVariation="faliure" />
+        </Stack>
+      ),
+    },
+  ];
+
+  // You don't actually need to include actions: '' and options: '' in your DATA array if they are purely UI columns. The table will look for the id in the row, find nothing, and then run the format function anyway.
+  const DATA = [
+    {
+      id: 1,
+      name: "Frozen yoghurt",
+      calories: "IN",
+      fat: "6",
+      carbs: 24,
+      protein: 3.9,
+    },
+    {
+      id: 2,
+      name: "Ice cream sandwich",
+      calories: "CN",
+      fat: "6",
+      carbs: 24,
+      protein: 3.9,
+    },
+    {
+      id: 3,
+      name: "Eclair",
+      calories: "CN",
+      fat: "6",
+      carbs: 24,
+      protein: 3.9,
+    },
+    {
+      id: 4,
+      name: "Cupcake",
+      calories: "CN",
+      fat: "6",
+      carbs: 24,
+      protein: 3.9,
+    },
+    {
+      id: 5,
+      name: "Gingerbread",
+      calories: "CN",
+      fat: "6",
+      carbs: 24,
+      protein: 3.9,
+    },
+  ];
+  // for table data ~~~~~~~~~~~~~~~~~~~~
 
   return (
     <>
@@ -127,7 +210,7 @@ const GlobalTwo = () => {
 
         <Box component="section" sx={{ mb: 4 }}>
           <h2>Custom Table Component</h2>
-          {/* <CustomTable/> */}
+          <CustomTable columns={COLUMNS} rows={DATA} maxHeight={450} />
         </Box>
       </Container>
     </>
