@@ -12,6 +12,7 @@ import CustomTable, { Column } from "../../Design/Components/CustomTable";
 import CommonButton from "../../Design/Components/Buttons/CommonButton";
 import StatusItem from "../../Design/Components/StatusItem";
 import Stack from "@mui/material/Stack";
+import SwitchButton from "../../Design/Components/Buttons/SwitchButton";
 
 const GlobalTwo = () => {
   // for accordion ~~~~~~~~~~~~~~~~~~~~
@@ -97,6 +98,14 @@ const GlobalTwo = () => {
               variant="contained"
             />
           )}
+          {row.rowType === "cupcake" && (
+            <CommonButton
+              label="Switch"
+              onClick={() => console.log("Clicked row:", row.id)}
+              arialabel="action-button"
+              variant="contained"
+            />
+          )}
         </>
       ),
     },
@@ -148,6 +157,12 @@ const GlobalTwo = () => {
                 label="Success"
                 statusVariation="success"
               />
+            </Stack>
+          )}
+          {row.rowType === "cupcake" && (
+            <Stack direction={"row"} spacing={2}>
+              <SwitchButton arialabel="swith on" />
+              <SwitchButton arialabel="swith off" defaultChecked />
             </Stack>
           )}
         </>
