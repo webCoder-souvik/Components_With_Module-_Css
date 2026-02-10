@@ -44,25 +44,6 @@ const CustomTable = ({
           </TableRow>
         </TableHead>
         <TableBody>
-          {/* {rows.map((row, index) => {
-            return (
-              <TableRow
-                hover
-                role="checkbox"
-                tabIndex={-1}
-                key={row.id || index}
-              >
-                {columns.map((column) => {
-                  const value = row[column.id];
-                  return (
-                    <TableCell key={column.id} align={column.align}>
-                      {column.format ? column.format(value) : value}
-                    </TableCell>
-                  );
-                })}
-              </TableRow>
-            );
-          })} */}
           {rows.map((row, rowIndex) => (
             <TableRow key={row.id || rowIndex}>
               {columns.map((column) => {

@@ -72,12 +72,32 @@ const GlobalTwo = () => {
       align: "center",
       // Added 'row' here so you can actually use the data
       format: (_, row) => (
-        <CommonButton
-          label="View More"
-          onClick={() => console.log("Clicked row:", row.id)}
-          arialabel="action-button"
-          variant="contained"
-        />
+        <>
+          {row.rowType === "yoghurt" && (
+            <CommonButton
+              label="View More"
+              onClick={() => console.log("Clicked row:", row.id)}
+              arialabel="action-button"
+              variant="contained"
+            />
+          )}
+          {row.rowType === "icecream" && (
+            <CommonButton
+              label="Learn More"
+              onClick={() => console.log("Clicked row:", row.id)}
+              arialabel="action-button"
+              variant="contained"
+            />
+          )}
+          {row.rowType === "eclair" && (
+            <CommonButton
+              label="Open"
+              onClick={() => console.log("Clicked row:", row.id)}
+              arialabel="action-button"
+              variant="contained"
+            />
+          )}
+        </>
       ),
     },
     {
@@ -85,11 +105,52 @@ const GlobalTwo = () => {
       label: "Options",
       align: "center",
       format: (_, row) => (
-        <Stack direction={"row"} spacing={2}>
-          <StatusItem arialabel="" label="Open" statusVariation="progress" />
-          <StatusItem arialabel="" label="Success" statusVariation="success" />
-          <StatusItem arialabel="" label="Fail" statusVariation="faliure" />
-        </Stack>
+        <>
+          {row.rowType === "yoghurt" && (
+            <Stack direction={"row"} spacing={2}>
+              <StatusItem
+                arialabel=""
+                label="Open"
+                statusVariation="progress"
+              />
+              <StatusItem
+                arialabel=""
+                label="Success"
+                statusVariation="success"
+              />
+              <StatusItem arialabel="" label="Fail" statusVariation="faliure" />
+            </Stack>
+          )}
+          {row.rowType === "icecream" && (
+            <Stack direction={"row"} spacing={2}>
+              <StatusItem arialabel="" label="Fail" statusVariation="faliure" />
+              <StatusItem
+                arialabel=""
+                label="Open"
+                statusVariation="progress"
+              />
+              <StatusItem
+                arialabel=""
+                label="Success"
+                statusVariation="success"
+              />
+            </Stack>
+          )}
+          {row.rowType === "eclair" && (
+            <Stack direction={"row"} spacing={2}>
+              <StatusItem
+                arialabel=""
+                label="Disable"
+                statusVariation="disable"
+              />
+              <StatusItem
+                arialabel=""
+                label="Success"
+                statusVariation="success"
+              />
+            </Stack>
+          )}
+        </>
       ),
     },
   ];
@@ -98,6 +159,7 @@ const GlobalTwo = () => {
   const DATA = [
     {
       id: 1,
+      rowType: "yoghurt",
       name: "Frozen yoghurt",
       calories: "IN",
       fat: "6",
@@ -106,6 +168,7 @@ const GlobalTwo = () => {
     },
     {
       id: 2,
+      rowType: "icecream",
       name: "Ice cream sandwich",
       calories: "CN",
       fat: "6",
@@ -114,6 +177,7 @@ const GlobalTwo = () => {
     },
     {
       id: 3,
+      rowType: "eclair",
       name: "Eclair",
       calories: "CN",
       fat: "6",
@@ -122,6 +186,7 @@ const GlobalTwo = () => {
     },
     {
       id: 4,
+      rowType: "cupcake",
       name: "Cupcake",
       calories: "CN",
       fat: "6",
@@ -130,6 +195,7 @@ const GlobalTwo = () => {
     },
     {
       id: 5,
+      rowType: "gingerbread",
       name: "Gingerbread",
       calories: "CN",
       fat: "6",
