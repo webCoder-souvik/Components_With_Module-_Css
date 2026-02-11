@@ -13,6 +13,13 @@ import CommonButton from "../../Design/Components/Buttons/CommonButton";
 import StatusItem from "../../Design/Components/StatusItem";
 import Stack from "@mui/material/Stack";
 import SwitchButton from "../../Design/Components/Buttons/SwitchButton";
+import BasicDropdown from "../../Design/Components/Dropdowns/BasicDropdown";
+
+import { MdOutlineManageAccounts } from "react-icons/md";
+import { LuUser } from "react-icons/lu";
+import { FiLogOut } from "react-icons/fi";
+
+import avatar_image_two from "/assets/images/avatar-image-two.jpg";
 
 const GlobalTwo = () => {
   // for accordion ~~~~~~~~~~~~~~~~~~~~
@@ -60,7 +67,7 @@ const GlobalTwo = () => {
   ];
   // for tab ~~~~~~~~~~~~~~~~~~~~
 
-  // for table data ~~~~~~~~~~~~~~~~~~~~
+  // table data ~~~~~~~~~~~~~~~~~~~~
   const COLUMNS: Column[] = [
     { id: "name", label: "Dessert", minWidth: 170 },
     { id: "calories", label: "Calories", align: "center", minWidth: 100 },
@@ -218,7 +225,24 @@ const GlobalTwo = () => {
       protein: 3.9,
     },
   ];
-  // for table data ~~~~~~~~~~~~~~~~~~~~
+  // table data ~~~~~~~~~~~~~~~~~~~~
+
+  // basic menu data ~~~~~~~~~~~~~~~~~~~~
+  const menuItems = [
+    { label: "Profile", value: "profile", icon: <LuUser /> },
+    {
+      label: "My Account",
+      value: "account",
+      icon: <MdOutlineManageAccounts />,
+    },
+    {
+      label: "Logout",
+      value: "logout",
+      onClick: () => console.log("Logging out..."),
+      icon: <FiLogOut />,
+    },
+  ];
+  // basic menu data ~~~~~~~~~~~~~~~~~~~~
 
   return (
     <>
@@ -286,6 +310,13 @@ const GlobalTwo = () => {
             </CustomAvatar>
 
             <CustomDropdwon />
+
+            <BasicDropdown
+              buttonLabel="Common Menu"
+              options={menuItems}
+              avatarSrc={avatar_image_two}
+              onSelect={(val) => console.log(`Selected: ${val}`)}
+            />
           </Grid>
         </Box>
 
