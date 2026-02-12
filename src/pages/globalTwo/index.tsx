@@ -311,10 +311,26 @@ const GlobalTwo = () => {
 
             <CustomDropdwon />
 
+            {/* plain dropdown/basic menu */}
+            <BasicDropdown
+              buttonLabel="Common Menu"
+              options={menuItems}
+              onSelect={(val) => console.log(`Selected: ${val}`)}
+            />
+
+            {/* dropdown with avatar image */}
             <BasicDropdown
               buttonLabel="Common Menu"
               options={menuItems}
               avatarSrc={avatar_image_two}
+              onSelect={(val) => console.log(`Selected: ${val}`)}
+            />
+
+            {/* dropdown with avatar text */}
+            <BasicDropdown
+              buttonLabel="Common Menu"
+              options={menuItems}
+              avatarLabel="S"
               onSelect={(val) => console.log(`Selected: ${val}`)}
             />
           </Grid>

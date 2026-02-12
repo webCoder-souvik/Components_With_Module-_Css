@@ -16,6 +16,7 @@ import MultipleSelect from "../../Design/Components/FormElements/CustomMultipleS
 import CustomCheckOption from "../../Design/Components/FormElements/CustomCheckOption";
 import RadioGroup from "@mui/material/RadioGroup";
 import CustomDialog from "../../Design/Components/CustomDialog";
+import CustomTextarea from "../../Design/Components/FormElements/CustomTextraea";
 
 const Global = () => {
   // options for signle select
@@ -388,6 +389,21 @@ const Global = () => {
                   onChange={handleRadioChange}
                 />
               </RadioGroup>
+            </Grid>
+          </Grid>
+
+          <h2>Custom Textarea</h2>
+          <Grid container spacing={2}>
+            <Grid size={12}>
+              <CustomTextarea
+                label="Custom Textarea"
+                // arialabel="custom textarea"
+                // placeholder="Put your message here"
+                aria-label="my input"
+                placeholder="custom area"
+                minRows={10}
+                maxRows={8}
+              />
             </Grid>
           </Grid>
 
