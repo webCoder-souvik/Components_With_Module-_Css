@@ -18,6 +18,15 @@ import RadioGroup from "@mui/material/RadioGroup";
 import CustomDialog from "../../Design/Components/CustomDialog";
 import CustomTextarea from "../../Design/Components/FormElements/CustomTextraea";
 
+import EnglishIcon from "/assets/images/Lang-Usa-Flag.svg";
+import SpanishIcon from "/assets/images/Lang-Spanish-Flag.svg";
+import ChineseIcon from "/assets/images/Lang-Chiense-Flag.svg";
+import TagalogIcon from "/assets/images/Lang-Tagalog-Flag.svg";
+import VietnameseIcon from "/assets/images/Lang-Vietnamese-Flag.svg";
+import FrenchIcon from "/assets/images/Lang-French-Flag.svg";
+import KoreanIcon from "/assets/images/Lang-Korean-Flag.svg";
+import RussianIcon from "/assets/images/Lang-Russian-Flag.svg";
+
 const Global = () => {
   // options for signle select
   const [age, setAge] = useState("");
@@ -88,6 +97,27 @@ const Global = () => {
   const [isFirstOpen, setIsFirstOpen] = React.useState(false);
   const [isSecondOpen, setIsSecondOpen] = React.useState(false);
   // for modals
+
+  // for language dropdown
+  // 1. Define your data array
+  const languages = [
+    { code: "en", label: "English", flag: EnglishIcon },
+    { code: "es", label: "Spanish", flag: SpanishIcon },
+    { code: "zh", label: "Chinese", flag: ChineseIcon },
+    { code: "tl", label: "Tagalog", flag: TagalogIcon },
+    { code: "vi", label: "Vietnamese", flag: VietnameseIcon },
+    { code: "fr", label: "French", flag: FrenchIcon },
+    { code: "ko", label: "Korean", flag: KoreanIcon },
+    { code: "ru", label: "Russian", flag: RussianIcon },
+    // ... add more as needed
+  ];
+
+  // 2. Define a handler for when the language changes
+  const handleLanguageChange = (selectedLang: any) => {
+    console.log("Language switched to:", selectedLang.label);
+    // This is where you would call i18n.changeLanguage(selectedLang.code)
+  };
+  // for language dropdown
 
   return (
     <>
@@ -162,11 +192,16 @@ const Global = () => {
         {/* ~~~~~~~~~~ switch components ~~~~~~~~~~ */}
 
         {/* ~~~~~~~~~~ dropdown components ~~~~~~~~~~ */}
-        <div>
-          <h2>Language and Profile Dropdowns</h2>
-          <LanguageDropdown arialabel="languages" />
+        <h2>Language and Profile Dropdowns</h2>
+        <Grid container spacing={2}>
+          <LanguageDropdown
+            ariaLabel="Select Language"
+            options={languages}
+            onLanguageChange={handleLanguageChange}
+            defaultSelected={languages[0]} // Optional: defaults to English
+          />
           <ProfileDropdown arialable="profile" />
-        </div>
+        </Grid>
         {/* ~~~~~~~~~~ dropdown components ~~~~~~~~~~ */}
 
         {/* ~~~~~~~~~~ different status components ~~~~~~~~~~ */}

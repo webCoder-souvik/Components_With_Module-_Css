@@ -29,6 +29,20 @@ const ProfileDropdown = ({ arialable }: ProfileDropdownProps) => {
         </span>
       </button>
 
+      {/* <Button onClick={() => setOpen(!open)}>
+        <img
+          src={ProfileIcon}
+          width={22}
+          height={22}
+          alt="profile"
+          className={styles.profile_icon}
+        />
+        <span className={styles.profile_label}>User 125</span>
+        <span className={`${styles.profile_arrow} ${open ? styles.up : ""}`}>
+          <FaChevronDown />
+        </span>
+      </Button> */}
+
       {open && (
         <div className={styles.profile_dropdown}>
           {profileOptions.map((opt, index) => (
