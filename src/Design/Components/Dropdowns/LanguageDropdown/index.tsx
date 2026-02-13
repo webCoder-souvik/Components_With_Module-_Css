@@ -1,24 +1,14 @@
 "use client";
+import { useState } from "react";
 import Box from "@mui/material/Box";
-// import { useState } from "react";
-// import EnglishIcon from "/assets/images/Lang-Usa-Flag.svg";
-// import SpanishIcon from "/assets/images/Lang-Spanish-Flag.svg";
-// import ChineseIcon from "/assets/images/Lang-Chiense-Flag.svg";
-// import TagalogIcon from "/assets/images/Lang-Tagalog-Flag.svg";
-// import VietnameseIcon from "/assets/images/Lang-Vietnamese-Flag.svg";
-// import FrenchIcon from "/assets/images/Lang-French-Flag.svg";
-// import KoreanIcon from "/assets/images/Lang-Korean-Flag.svg";
-// import RussianIcon from "/assets/images/Lang-Russian-Flag.svg";
-// import { FaChevronDown } from "react-icons/fa6";
-
 import Button from "@mui/material/Button";
 import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
 import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
-import { useState } from "react";
-import { IoIosArrowUp } from "react-icons/io";
-import { IoIosArrowDown } from "react-icons/io";
+import { FaChevronDown } from "react-icons/fa6";
+// import { IoIosArrowUp } from "react-icons/io";
+// import { IoIosArrowDown } from "react-icons/io";
 
 import styles from "./languageDropdown.module.css";
 
@@ -63,37 +53,25 @@ const LanguageDropdown = ({
   };
 
   return (
-    <Box component="div">
+    <Box component="div" className={styles.languageDropdown}>
       <Button
         variant="outlined"
         onClick={handleClick}
         aria-label={ariaLabel}
         aria-haspopup="true"
         aria-expanded={open ? "true" : undefined}
-        endIcon={open ? <IoIosArrowUp /> : <IoIosArrowDown />}
-        sx={{
-          textTransform: "none",
-          color: "text.primary",
-          borderColor: "divider",
-        }}
+        endIcon={<FaChevronDown />}
+        // endIcon={open ? <IoIosArrowUp /> : <IoIosArrowDown />}
       >
-        <img
-          src={selected.flag}
-          alt=""
-          style={{ width: 20, marginRight: 8, borderRadius: "2px" }}
-        />
-        {selected.label}
+        <img src={selected.flag} alt={selected.label} />
+        <span className="labelHolder">{selected.label}</span>
       </Button>
 
       <Menu
         anchorEl={anchorEl}
         open={open}
         onClose={handleClose}
-        // MenuListProps={{
-        //   'aria-labelledby': 'language-button',
-        //   role: 'listbox',
-        // }}
-
+        className={styles.dropdownMenu}
         slotProps={{
           list: {
             "aria-labelledby": "Language",
@@ -107,7 +85,7 @@ const LanguageDropdown = ({
             onClick={() => handleSelect(opt)}
           >
             <ListItemIcon>
-              <img src={opt.flag} alt={opt.label} style={{ width: 20 }} />
+              <img src={opt.flag} alt={opt.label} />
             </ListItemIcon>
             <ListItemText primary={opt.label} />
           </MenuItem>

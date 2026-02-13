@@ -73,6 +73,7 @@ const BasicDropdown = ({
         aria-expanded={open ? "true" : undefined}
         onClick={handleClick}
         endIcon={<FaChevronDown />}
+        // endIcon={open ? <IoIosArrowUp /> : <IoIosArrowDown />}
       >
         {buttonLabel}
       </Button>
