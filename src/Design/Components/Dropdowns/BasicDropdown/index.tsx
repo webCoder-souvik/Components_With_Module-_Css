@@ -23,6 +23,7 @@ interface BasicDropdownProps {
   options: DropdownOption[];
   avatarSrc?: string; // Optional avatar
   avatarLabel?: string;
+  avatarIcon?: React.ReactNode;
   onSelect?: (value: string | number) => void; // Global select handler
 }
 
@@ -31,6 +32,7 @@ const BasicDropdown = ({
   options,
   avatarSrc,
   avatarLabel,
+  avatarIcon,
   onSelect,
 }: BasicDropdownProps) => {
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
@@ -55,14 +57,15 @@ const BasicDropdown = ({
 
   return (
     <div className={styles.basicMenu}>
-      {(avatarSrc || avatarLabel) && (
+      {(avatarSrc || avatarLabel || avatarIcon) && (
         <CustomAvatar
           variant="circular"
           src={avatarSrc}
           size={60}
           alt="user-avatar"
+          icon={avatarIcon}
         >
-          {!avatarSrc && avatarLabel}
+          {!avatarSrc && avatarLabel && avatarIcon}
         </CustomAvatar>
       )}
 

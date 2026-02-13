@@ -20,6 +20,8 @@ import { LuUser } from "react-icons/lu";
 import { FiLogOut } from "react-icons/fi";
 
 import avatar_image_two from "/assets/images/avatar-image-two.jpg";
+import { PiSmileyStickerFill } from "react-icons/pi";
+import { LiaStickerMule } from "react-icons/lia";
 
 const GlobalTwo = () => {
   // for accordion ~~~~~~~~~~~~~~~~~~~~
@@ -298,6 +300,7 @@ const GlobalTwo = () => {
         <Box component="section" sx={{ mb: 4 }}>
           <h2>Custom Avatar</h2>
           <Grid container spacing={2}>
+            {/* avatar with image */}
             <CustomAvatar
               variant="circular"
               src={avatar_image}
@@ -305,10 +308,24 @@ const GlobalTwo = () => {
               alt="avatar"
             />
 
+            {/* avatar with text */}
             <CustomAvatar variant="circular" size={60}>
               S
             </CustomAvatar>
 
+            {/* avatar with icon */}
+            <CustomAvatar
+              variant="circular"
+              size={60}
+              icon={<PiSmileyStickerFill />}
+            />
+
+            {/* default avatar */}
+            <CustomAvatar variant="circular" size={60} />
+          </Grid>
+
+          <h2>Custom Dropdown Component</h2>
+          <Grid container spacing={2}>
             <CustomDropdwon />
 
             {/* plain dropdown/basic menu */}
@@ -323,6 +340,14 @@ const GlobalTwo = () => {
               buttonLabel="Common Menu"
               options={menuItems}
               avatarSrc={avatar_image_two}
+              onSelect={(val) => console.log(`Selected: ${val}`)}
+            />
+
+            {/* dropdown with icon */}
+            <BasicDropdown
+              buttonLabel="Common Menu"
+              options={menuItems}
+              avatarIcon={<LiaStickerMule />}
               onSelect={(val) => console.log(`Selected: ${val}`)}
             />
 
