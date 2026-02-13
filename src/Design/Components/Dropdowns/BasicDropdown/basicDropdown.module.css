@@ -1,16 +1,21 @@
 .basicMenu {
   display: inline-flex;
   position: relative;
+  width: 210px;
   height: 50px;
 
   :global(.MuiAvatar-root) {
-    width: 35px;
-    height: 35px;
+    box-sizing: border-box;
+    width: 40px;
+    height: 40px;
     position: absolute;
-    inset: 0 auto 0 10px;
+    inset: 0 auto 0 5px;
     z-index: 1;
+    padding: 10px;
     margin: auto 0;
     pointer-events: none;
+    background: var(--color-white);
+    color: var(--color-primary);
   }
 
   :global(.MuiButtonBase-root) {
@@ -18,9 +23,11 @@
     gap: 8px;
     background: var(--color-primary);
     color: var(--color-white);
+    width: 100%;
+    border-radius: 50px;
 
     :global(.MuiButton-icon) {
-      margin: 0;
+      margin-left: auto;
       transition: transform 0.2s ease;
 
       svg {
@@ -36,4 +43,8 @@
   :global(.MuiButtonBase-root[aria-expanded="true"]) :global(.MuiButton-icon) {
     transform: rotate(180deg);
   }
+}
+
+:global(.MuiPaper-root) {
+  width: 210px;
 }

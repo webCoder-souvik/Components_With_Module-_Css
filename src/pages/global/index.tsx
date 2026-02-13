@@ -4,7 +4,6 @@ import { FaArrowRight } from "react-icons/fa6";
 import CustomIconButton from "../../Design/Components/Buttons/IconButton";
 import SwitchButton from "../../Design/Components/Buttons/SwitchButton";
 import LanguageDropdown from "../../Design/Components/Dropdowns/LanguageDropdown";
-import ProfileDropdown from "../../Design/Components/Dropdowns/ProfileDropdown";
 import StatusItem from "../../Design/Components/StatusItem";
 import CustomtextField from "../../Design/Components/FormElements/CustomTextField";
 
@@ -26,6 +25,8 @@ import VietnameseIcon from "/assets/images/Lang-Vietnamese-Flag.svg";
 import FrenchIcon from "/assets/images/Lang-French-Flag.svg";
 import KoreanIcon from "/assets/images/Lang-Korean-Flag.svg";
 import RussianIcon from "/assets/images/Lang-Russian-Flag.svg";
+import BasicDropdown from "../../Design/Components/Dropdowns/BasicDropdown";
+import { FaUser } from "react-icons/fa";
 
 const Global = () => {
   // options for signle select
@@ -119,6 +120,16 @@ const Global = () => {
   };
   // for language dropdown
 
+  // basic menu data ~~~~~~~~~~~~~~~~~~~~
+  const menuItems = [
+    { label: "Logout", value: "logout" },
+    {
+      label: "Delete",
+      value: "delete",
+    },
+  ];
+  // basic menu data ~~~~~~~~~~~~~~~~~~~~
+
   return (
     <>
       <div className="container">
@@ -200,7 +211,13 @@ const Global = () => {
             onLanguageChange={handleLanguageChange}
             defaultSelected={languages[0]} // Optional: defaults to English
           />
-          <ProfileDropdown arialable="profile" />
+
+          <BasicDropdown
+            buttonLabel="Common Menu"
+            options={menuItems}
+            avatarIcon={<FaUser />}
+            onSelect={(val) => console.log(`Selected: ${val}`)}
+          />
         </Grid>
         {/* ~~~~~~~~~~ dropdown components ~~~~~~~~~~ */}
 

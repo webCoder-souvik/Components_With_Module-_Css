@@ -4,10 +4,10 @@ import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
 import CustomAvatar from "../../CustomAvatar";
 import { FaChevronDown } from "react-icons/fa6";
-
-import styles from "./basicDropdown.module.css";
 import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
+
+import styles from "./basicDropdown.module.css";
 
 // 1. Define the structure for individual menu items
 export interface DropdownOption {
