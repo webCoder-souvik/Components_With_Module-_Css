@@ -24,7 +24,7 @@ type HTMLInputType =
   | "url";
 
 interface CustomtextFieldProps {
-  arialabel: string;
+  ariaLabel: string;
   id: string;
   variant: "outlined" | "filled" | "standard";
   type: HTMLInputType;
@@ -36,7 +36,7 @@ interface CustomtextFieldProps {
 }
 
 const CustomtextField = ({
-  arialabel,
+  ariaLabel,
   id,
   label,
   variant,
@@ -79,7 +79,7 @@ const CustomtextField = ({
           className={`${styles.baseInput} ${variantClass} ${className}`.trim()}
           slotProps={{
             htmlInput: {
-              "aria-label": arialabel,
+              "aria-label": ariaLabel,
             },
             inputLabel: {
               // Keeps the label from overlapping the date/time icons

@@ -21,7 +21,7 @@ const CustomDropdwon = () => {
         <Stack direction={"row"}>
           <CustomAvatar src={avatar_image} />
           <CommonButton
-            arialabel="dropdown"
+            ariaLabel="dropdown"
             label="Select an option"
             variant="contained"
             onClick={handleToggle}

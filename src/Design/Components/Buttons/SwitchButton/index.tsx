@@ -3,18 +3,18 @@ import styles from "./switchButton.module.css";
 
 interface SwitchButtonProps {
   defaultChecked?: boolean;
-  arialabel: string;
+  ariaLabel: string;
 }
 
 const SwitchButton = ({
   defaultChecked = false,
-  arialabel,
+  ariaLabel,
 }: SwitchButtonProps) => {
   return (
     <Switch
       defaultChecked={defaultChecked}
       className={styles.customSwitch}
-      aria-label={arialabel}
+      aria-label={ariaLabel}
     />
   );
 };

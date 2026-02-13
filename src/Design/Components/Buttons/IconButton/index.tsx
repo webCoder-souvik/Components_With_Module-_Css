@@ -35,7 +35,7 @@ const icons = {
 };
 
 interface CustomIconButtonProps {
-  arialabel: string;
+  ariaLabel: string;
   icon: IconType;
   buttonColor?: "cyan" | "blue" | "red" | "grey" | "white";
   onClick?: () => void;
@@ -43,7 +43,7 @@ interface CustomIconButtonProps {
 }
 
 const CustomIconButton = ({
-  arialabel,
+  ariaLabel,
   icon,
   buttonColor,
   disabled = false,
@@ -51,7 +51,7 @@ const CustomIconButton = ({
 }: CustomIconButtonProps) => {
   return (
     <IconButton
-      aria-label={arialabel}
+      aria-label={ariaLabel}
       onClick={onClick}
       // className={
       //   buttonColor === "cyan"

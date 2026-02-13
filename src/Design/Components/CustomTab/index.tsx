@@ -18,7 +18,7 @@ interface CustomTabProps {
   tabs: TabData[]; // Array of tab objects
   variant?: "fullWidth" | "scrollable" | "standard";
   allowMobileButton?: boolean;
-  arialabel: string;
+  ariaLabel: string;
   defaultValue?: string; // Optional: set which tab opens first
 }
 
@@ -26,7 +26,7 @@ const CustomTab = ({
   tabs,
   variant = "standard", // Default value
   allowMobileButton = false,
-  arialabel,
+  ariaLabel,
   defaultValue,
 }: CustomTabProps) => {
   // Initialize with the first tab's value or a specific default
@@ -46,7 +46,7 @@ const CustomTab = ({
             onChange={handleChange}
             variant={variant}
             allowScrollButtonsMobile={allowMobileButton}
-            aria-label={arialabel}
+            aria-label={ariaLabel}
           >
             {/* Map through the tabs array to create the headers */}
             {tabs.map((tab) => (

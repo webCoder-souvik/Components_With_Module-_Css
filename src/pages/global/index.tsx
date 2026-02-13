@@ -126,24 +126,24 @@ const Global = () => {
         <div>
           <h2>Common Button Components</h2>
           <CommonButton
-            arialabel="button"
+            ariaLabel="button"
             label="Contained Button"
             variant="contained"
           />
           <CommonButton
-            arialabel="button"
+            ariaLabel="button"
             label="Outlined Button"
             variant="outlined"
           />
-          <CommonButton arialabel="button" label="Text Button" variant="text" />
+          <CommonButton ariaLabel="button" label="Text Button" variant="text" />
           <CommonButton
-            arialabel="button"
+            ariaLabel="button"
             label="Text Button"
             variant="contained"
             startIcon={<FaArrowLeft />}
           />
           <CommonButton
-            arialabel="button"
+            ariaLabel="button"
             label="Text Button"
             variant="outlined"
             startIcon={<FaArrowRight />}
@@ -155,27 +155,27 @@ const Global = () => {
         <div>
           <h2>Icon Button Components</h2>
           <CustomIconButton
-            arialabel="icon button"
+            ariaLabel="icon button"
             buttonColor="blue"
             icon="delete"
           />
           <CustomIconButton
-            arialabel="icon button"
+            ariaLabel="icon button"
             buttonColor="cyan"
             icon="edit"
           />
           <CustomIconButton
-            arialabel="icon button"
+            ariaLabel="icon button"
             buttonColor="grey"
             icon="eye"
           />
           <CustomIconButton
-            arialabel="icon button"
+            ariaLabel="icon button"
             buttonColor="red"
             icon="microphone"
           />
           <CustomIconButton
-            arialabel="icon button"
+            ariaLabel="icon button"
             buttonColor="red"
             icon="microphone"
             disabled
@@ -186,8 +186,8 @@ const Global = () => {
         {/* ~~~~~~~~~~ switch components ~~~~~~~~~~ */}
         <div>
           <h2>Switch Components</h2>
-          <SwitchButton arialabel="switch" />
-          <SwitchButton arialabel="switch" defaultChecked />
+          <SwitchButton ariaLabel="switch" />
+          <SwitchButton ariaLabel="switch" defaultChecked />
         </div>
         {/* ~~~~~~~~~~ switch components ~~~~~~~~~~ */}
 
@@ -209,22 +209,22 @@ const Global = () => {
           <h2>Different Status Items</h2>
           <StatusItem
             label="Success"
-            arialabel="success"
+            ariaLabel="success"
             statusVariation="success"
           />
           <StatusItem
             label="Progress"
-            arialabel="progress"
+            ariaLabel="progress"
             statusVariation="progress"
           />
           <StatusItem
             label="Faliure"
-            arialabel="faliure"
+            ariaLabel="faliure"
             statusVariation="faliure"
           />
           <StatusItem
             label="Disable"
-            arialabel="disable"
+            ariaLabel="disable"
             statusVariation="disable"
           />
         </div>
@@ -236,7 +236,7 @@ const Global = () => {
           <Grid container spacing={2} wrap="wrap">
             <Grid size={6}>
               <CustomtextField
-                arialabel="name"
+                ariaLabel="name"
                 id="name"
                 label="Outlined"
                 type="text"
@@ -246,7 +246,7 @@ const Global = () => {
             </Grid>
             <Grid size={6}>
               <CustomtextField
-                arialabel="name"
+                ariaLabel="name"
                 id="name"
                 label="Filled"
                 type="text"
@@ -256,7 +256,7 @@ const Global = () => {
             </Grid>
             <Grid size={6}>
               <CustomtextField
-                arialabel="name"
+                ariaLabel="name"
                 id="name"
                 label="Standard"
                 type="text"
@@ -270,7 +270,7 @@ const Global = () => {
           <Grid container spacing={2}>
             <Grid size={6}>
               <CustomtextField
-                arialabel="name"
+                ariaLabel="name"
                 id="name"
                 label="Name"
                 type="text"
@@ -280,7 +280,7 @@ const Global = () => {
             </Grid>
             <Grid size={6}>
               <CustomtextField
-                arialabel="email"
+                ariaLabel="email"
                 id="email"
                 label="Email"
                 type="email"
@@ -290,7 +290,7 @@ const Global = () => {
             </Grid>
             <Grid size={6}>
               <CustomtextField
-                arialabel="password"
+                ariaLabel="password"
                 id="password"
                 label="Password"
                 type="password"
@@ -300,7 +300,7 @@ const Global = () => {
             </Grid>
             <Grid size={6}>
               <CustomtextField
-                arialabel="date"
+                ariaLabel="date"
                 id="date"
                 label="Date"
                 type="date"
@@ -432,7 +432,7 @@ const Global = () => {
             <Grid size={12}>
               <CustomTextarea
                 label="Custom Textarea"
-                // arialabel="custom textarea"
+                // ariaLabel="custom textarea"
                 // placeholder="Put your message here"
                 aria-label="my input"
                 placeholder="custom area"
@@ -445,14 +445,14 @@ const Global = () => {
           <h2>Custom Dialog (Modal)</h2>
           <Grid container spacing={2}>
             <CommonButton
-              arialabel="button"
+              ariaLabel="button"
               label="Modal Button one"
               variant="contained"
               onClick={() => setIsFirstOpen(true)}
             />
 
             <CommonButton
-              arialabel="button"
+              ariaLabel="button"
               label="Modal Button two"
               variant="contained"
               onClick={() => setIsSecondOpen(true)}

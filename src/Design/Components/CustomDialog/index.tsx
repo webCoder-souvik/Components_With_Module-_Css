@@ -27,7 +27,7 @@ const CustomDialog = ({
             <Grid size={10}>{title && <h3>{title}</h3>}</Grid>
             <Grid size={2} sx={{ textAlign: "right" }}>
               <CustomIconButton
-                arialabel="close"
+                ariaLabel="close"
                 icon="close"
                 onClick={onClose}
                 buttonColor="blue"

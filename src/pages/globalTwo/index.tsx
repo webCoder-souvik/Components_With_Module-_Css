@@ -87,7 +87,7 @@ const GlobalTwo = () => {
             <CommonButton
               label="View More"
               onClick={() => console.log("Clicked row:", row.id)}
-              arialabel="action-button"
+              ariaLabel="action-button"
               variant="contained"
             />
           )}
@@ -95,7 +95,7 @@ const GlobalTwo = () => {
             <CommonButton
               label="Learn More"
               onClick={() => console.log("Clicked row:", row.id)}
-              arialabel="action-button"
+              ariaLabel="action-button"
               variant="contained"
             />
           )}
@@ -103,7 +103,7 @@ const GlobalTwo = () => {
             <CommonButton
               label="Open"
               onClick={() => console.log("Clicked row:", row.id)}
-              arialabel="action-button"
+              ariaLabel="action-button"
               variant="contained"
             />
           )}
@@ -111,7 +111,7 @@ const GlobalTwo = () => {
             <CommonButton
               label="Switch"
               onClick={() => console.log("Clicked row:", row.id)}
-              arialabel="action-button"
+              ariaLabel="action-button"
               variant="contained"
             />
           )}
@@ -127,28 +127,28 @@ const GlobalTwo = () => {
           {row.rowType === "yoghurt" && (
             <Stack direction={"row"} spacing={2}>
               <StatusItem
-                arialabel=""
+                ariaLabel=""
                 label="Open"
                 statusVariation="progress"
               />
               <StatusItem
-                arialabel=""
+                ariaLabel=""
                 label="Success"
                 statusVariation="success"
               />
-              <StatusItem arialabel="" label="Fail" statusVariation="faliure" />
+              <StatusItem ariaLabel="" label="Fail" statusVariation="faliure" />
             </Stack>
           )}
           {row.rowType === "icecream" && (
             <Stack direction={"row"} spacing={2}>
-              <StatusItem arialabel="" label="Fail" statusVariation="faliure" />
+              <StatusItem ariaLabel="" label="Fail" statusVariation="faliure" />
               <StatusItem
-                arialabel=""
+                ariaLabel=""
                 label="Open"
                 statusVariation="progress"
               />
               <StatusItem
-                arialabel=""
+                ariaLabel=""
                 label="Success"
                 statusVariation="success"
               />
@@ -157,12 +157,12 @@ const GlobalTwo = () => {
           {row.rowType === "eclair" && (
             <Stack direction={"row"} spacing={2}>
               <StatusItem
-                arialabel=""
+                ariaLabel=""
                 label="Disable"
                 statusVariation="disable"
               />
               <StatusItem
-                arialabel=""
+                ariaLabel=""
                 label="Success"
                 statusVariation="success"
               />
@@ -170,8 +170,8 @@ const GlobalTwo = () => {
           )}
           {row.rowType === "cupcake" && (
             <Stack direction={"row"} spacing={2}>
-              <SwitchButton arialabel="swith on" />
-              <SwitchButton arialabel="swith off" defaultChecked />
+              <SwitchButton ariaLabel="swith on" />
+              <SwitchButton ariaLabel="swith off" defaultChecked />
             </Stack>
           )}
         </>
@@ -294,7 +294,7 @@ const GlobalTwo = () => {
             tabs={tabData}
             variant="scrollable"
             allowMobileButton={true}
-            arialabel="all page related tabs"
+            ariaLabel="all page related tabs"
           />
         </Box>
         <Box component="section" sx={{ mb: 4 }}>

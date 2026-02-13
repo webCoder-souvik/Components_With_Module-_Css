@@ -8,7 +8,7 @@ import styles from "./textarea.module.css";
 
 interface CustomTextareaProps extends TextareaAutosizeProps {
   label?: string;
-  // arialabel?: string;
+  // ariaLabel?: string;
   // placeholder?: string;
   // minRows: number;
   // maxRows: number;
@@ -16,7 +16,7 @@ interface CustomTextareaProps extends TextareaAutosizeProps {
 
 const CustomTextarea = ({
   label,
-  // arialabel,
+  // ariaLabel,
   // placeholder,
   // minRows,
   // maxRows,
@@ -28,7 +28,7 @@ const CustomTextarea = ({
         {label && <Typography component="label">{label}</Typography>}
 
         <TextareaAutosize
-          // aria-label={arialabel}
+          // aria-label={ariaLabel}
           // placeholder={placeholder}
           // minRows={minRows}
           // maxRows={maxRows}

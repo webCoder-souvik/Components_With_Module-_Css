@@ -3,13 +3,13 @@ import styles from "./status.module.css";
 interface StatusItemsProps {
   statusVariation: "success" | "faliure" | "progress" | "disable";
   label: string;
-  arialabel: string;
+  ariaLabel: string;
 }
 
 const StatusItem = ({
   statusVariation,
   label,
-  arialabel,
+  ariaLabel,
 }: StatusItemsProps) => {
   return (
     <>
@@ -27,7 +27,7 @@ const StatusItem = ({
         // }
 
         className={`${styles.status_capsule} ${statusVariation ? styles[statusVariation] : ""}`}
-        aria-label={arialabel}
+        aria-label={ariaLabel}
       >
         {label}
       </span>

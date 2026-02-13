@@ -2,7 +2,7 @@ import Button from "@mui/material/Button";
 import styles from "./commonButton.module.css";
 
 interface CustomButtonProps {
-  arialabel: string;
+  ariaLabel: string;
   label: string;
   variant: "contained" | "outlined" | "text";
   startIcon?: React.ReactNode;
@@ -12,7 +12,7 @@ interface CustomButtonProps {
 }
 
 const CommonButton = ({
-  arialabel,
+  ariaLabel,
   label,
   variant,
   startIcon,
@@ -22,7 +22,7 @@ const CommonButton = ({
 }: CustomButtonProps) => {
   return (
     <Button
-      aria-label={arialabel}
+      aria-label={ariaLabel}
       variant={variant}
       startIcon={startIcon}
       endIcon={endIcon}
