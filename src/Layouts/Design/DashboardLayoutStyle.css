@@ -1,0 +1,131 @@
+.dboard-container {
+  display: flex;
+
+  .dboard-right-panel {
+    flex: 1 0 0;
+    padding-inline: 30px;
+  }
+}
+
+.dboard-header {
+  background: #e9e9e9;
+  padding: 15px;
+
+  h2 {
+    margin-block-end: 0;
+  }
+}
+
+.sidebar-panel {
+  width: 275px;
+  height: 100dvh;
+  background: #e9e9e9;
+  padding: 0 20px;
+  transition: var(--transition-common);
+
+  .sidebar-header {
+    height: 70px;
+    display: inline-flex;
+    align-items: center;
+  }
+
+  .sidebar-nav {
+    overflow-y: auto;
+
+    &::-webkit-scrollbar-track {
+      -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.05);
+      background-color: #f6f6f6;
+      border-radius: 10px;
+    }
+
+    &::-webkit-scrollbar {
+      width: 4px;
+      background-color: #f6f6f6;
+      border-radius: 10px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: #00c0d4;
+      border-radius: 10px;
+    }
+  }
+
+  .sidebar-body {
+    height: calc(100dvh - 70px);
+  }
+
+  .sidebar-nav ul {
+    padding: 0;
+  }
+
+  .sidebar-nav ul li {
+    padding-inline: 0;
+
+    a {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      width: 100%;
+      padding: 15px;
+      background: #f0fafb;
+      border-radius: 50px;
+      color: #00c0d4;
+
+      span.icon {
+        width: 20px;
+        height: 20px;
+
+        img {
+          display: block;
+          width: 20px;
+          height: auto;
+        }
+      }
+    }
+
+    a.active {
+      background: #00c0d4;
+      color: #fff;
+
+      img {
+        filter: brightness(0) invert(1);
+        opacity: 1;
+      }
+    }
+  }
+
+  .sidebar-body {
+    .sidebar-footer {
+      margin-block-start: auto;
+      padding-bottom: 20px;
+      position: relative;
+
+      ul {
+        padding: 0;
+
+        li {
+          padding: 0;
+
+          a {
+            font-size: 14px;
+            color: #000;
+          }
+        }
+
+        li:not(:last-child) {
+          margin-bottom: 8px;
+        }
+      }
+
+      .collapse-button {
+        position: absolute;
+        inset-block-start: 0;
+        inset-inline-end: -35px;
+      }
+    }
+  }
+}
+
+.drawer-collapse.sidebar-panel {
+  width: 180px;
+}

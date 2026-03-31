@@ -358,6 +358,13 @@ const GlobalTwo = () => {
               avatarLabel="S"
               onSelect={(val) => console.log(`Selected: ${val}`)}
             />
+
+            <BasicDropdown
+              buttonLabel=""
+              options={menuItems}
+              avatarLabel="S"
+              onSelect={(val) => console.log(`Selected: ${val}`)}
+            />
           </Grid>
         </Box>
 

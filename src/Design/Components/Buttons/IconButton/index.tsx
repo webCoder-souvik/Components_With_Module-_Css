@@ -19,7 +19,7 @@ type IconType =
   | "leftArrow"
   | "enter"
   | "microphone"
-  | "breadcrumb"
+  | "hamburger"
   | "close";
 
 const icons = {
@@ -30,7 +30,7 @@ const icons = {
   leftArrow: <FaArrowLeft />,
   enter: <FaTelegramPlane />,
   microphone: <FaMicrophone />,
-  breadcrumb: <GiHamburgerMenu />,
+  hamburger: <GiHamburgerMenu />,
   close: <IoClose />,
 };
 

@@ -1,9 +1,9 @@
+import Box from "@mui/material/Box";
+import Grid from "@mui/material/Grid";
+import Stack from "@mui/material/Stack";
+
 const Dashboard = () => {
-  return (
-    <div style={{ background: "var(--bg)", color: "var(--primary)" }}>
-      Dashboard
-    </div>
-  );
+  return <Box component="section"></Box>;
 };
 
 export default Dashboard;
