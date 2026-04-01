@@ -1,0 +1,35 @@
+.datePicker {
+  width: 100%;
+
+  label {
+    display: block;
+    font-size: 16px;
+    font-weight: 500;
+    margin-bottom: 5px;
+  }
+
+  :global(.MuiFormControl-root) {
+    width: 100%;
+  }
+
+  :global(.MuiPickersInputBase-root) {
+    box-sizing: border-box;
+    background: #fff;
+    border-radius: 2px;
+    height: 48px;
+    /* font-family: var(--ff-inter);
+        font-size: var(--f-size-S); */
+    font-weight: 400;
+    color: #4f566b;
+    padding: 12px 16px;
+
+    &:hover :global(.MuiPickersOutlinedInput-notchedOutline) {
+      border-color: green;
+    }
+
+    &:global(.Mui-focused .MuiPickersOutlinedInput-notchedOutline) {
+      border-color: green !important;
+      border-width: 1px;
+    }
+  }
+}

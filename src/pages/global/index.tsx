@@ -28,6 +28,8 @@ import RussianIcon from "/assets/images/Lang-Russian-Flag.svg";
 
 import BasicDropdown from "../../Design/Components/Dropdowns/BasicDropdown";
 import { FaUser } from "react-icons/fa";
+import CustomDatePicker from "../../Design/Components/FormElements/CustomDatePicker";
+import dayjs, { Dayjs } from "dayjs";
 
 const Global = () => {
   // options for signle select
@@ -130,6 +132,10 @@ const Global = () => {
     },
   ];
   // basic menu data ~~~~~~~~~~~~~~~~~~~~
+
+  // custom date picker data ~~~~~~~~~~~~~~~~~~~~
+  const [date, setDate] = React.useState<Dayjs | null>(dayjs());
+  // custom date picker data ~~~~~~~~~~~~~~~~~~~~
 
   return (
     <>
@@ -458,6 +464,15 @@ const Global = () => {
                 maxRows={8}
               />
             </Grid>
+          </Grid>
+
+          <h2>Custom Date Field</h2>
+          <Grid container spacing={2}>
+            <CustomDatePicker
+              label="My Calender"
+              value={date}
+              onChange={(newDate) => setDate(newDate)}
+            />
           </Grid>
 
           <h2>Custom Dialog (Modal)</h2>
