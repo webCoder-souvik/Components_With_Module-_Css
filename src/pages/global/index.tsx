@@ -1,6 +1,8 @@
 import CommonButton from "../../Design/Components/Buttons/CommonButton";
 import { FaArrowLeft } from "react-icons/fa6";
 import { FaArrowRight } from "react-icons/fa6";
+import { AiOutlineMail } from "react-icons/ai";
+import { MdLockOutline } from "react-icons/md";
 import CustomIconButton from "../../Design/Components/Buttons/IconButton";
 import SwitchButton from "../../Design/Components/Buttons/SwitchButton";
 import LanguageDropdown from "../../Design/Components/Dropdowns/LanguageDropdown";
@@ -164,7 +166,7 @@ const Global = () => {
             ariaLabel="button"
             label="Text Button"
             variant="outlined"
-            startIcon={<FaArrowRight />}
+            endIcon={<FaArrowRight />}
           />
         </div>
         {/* ~~~~~~~~~~ common button components ~~~~~~~~~~ */}
@@ -286,6 +288,32 @@ const Global = () => {
                 type="text"
                 placeholder="Name"
                 variant="standard"
+              />
+            </Grid>
+          </Grid>
+
+          <h2>With start icon</h2>
+          <Grid container spacing={2}>
+            <Grid size={6}>
+              <CustomtextField
+                ariaLabel="name"
+                id="name"
+                label="Name"
+                type="text"
+                placeholder="Name"
+                variant="filled"
+                startIcon={<AiOutlineMail />}
+              />
+            </Grid>
+            <Grid size={6}>
+              <CustomtextField
+                ariaLabel="password"
+                id="password"
+                label="Password"
+                type="password"
+                placeholder="Password"
+                variant="filled"
+                startIcon={<MdLockOutline />}
               />
             </Grid>
           </Grid>

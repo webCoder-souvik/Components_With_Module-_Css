@@ -33,6 +33,7 @@ interface CustomtextFieldProps {
   disabled?: boolean;
   placeholder?: string;
   className?: string;
+  startIcon?: React.ReactNode;
 }
 
 const CustomtextField = ({
@@ -45,6 +46,7 @@ const CustomtextField = ({
   required,
   disabled,
   className = "",
+  startIcon,
 }: CustomtextFieldProps) => {
   // 1. State to manage password visibility
   const [showPassword, setShowPassword] = useState(false);
@@ -87,6 +89,11 @@ const CustomtextField = ({
                 type === "date" || type === "datetime-local" ? true : undefined,
             },
             input: {
+              //Logic for the Start Icon
+              startAdornment: startIcon ? (
+                <InputAdornment position="start">{startIcon}</InputAdornment>
+              ) : null,
+              //Logic for the Password Eye Icon (End Adornment)
               endAdornment:
                 type === "password" ? (
                   <InputAdornment position="end">

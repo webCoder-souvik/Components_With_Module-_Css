@@ -34,3 +34,21 @@
   border-color: black;
   border-radius: 0;
 }
+
+/* for start icon */
+.inputField :global(.MuiInputBase-adornedStart) {
+  padding-left: 0;
+}
+.inputField :global(.MuiInputAdornment-positionStart) {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 10px;
+  max-height: 100%;
+  font-size: 20px;
+  pointer-events: none;
+}
+.inputField:has(:global(.MuiInputAdornment-positionStart))
+  :global(.MuiInputBase-input) {
+  padding-left: 45px;
+}
