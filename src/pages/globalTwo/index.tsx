@@ -22,6 +22,7 @@ import { FiLogOut } from "react-icons/fi";
 import avatar_image_two from "/assets/images/avatar-image-two.jpg";
 import { PiSmileyStickerFill } from "react-icons/pi";
 import { LiaStickerMule } from "react-icons/lia";
+import FileUpload from "../../Design/Components/FileUpload/FileUpload";
 
 const GlobalTwo = () => {
   // for accordion ~~~~~~~~~~~~~~~~~~~~
@@ -372,6 +373,13 @@ const GlobalTwo = () => {
           <h2>Custom Table Component</h2>
           <CustomTable columns={COLUMNS} rows={DATA} maxHeight={450} />
         </Box>
+
+        <FileUpload
+          title="Upload Medicaid Documents"
+          description="PDF, JPG, PNG • Max 5MB"
+          maxSizeMB={5}
+          onFilesChange={(files) => console.log(files)}
+        />
       </Container>
     </>
   );
